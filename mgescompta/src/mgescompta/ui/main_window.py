@@ -25,7 +25,9 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
+from mgescompta import __version__
 from mgescompta.db.database import DB_PATH
+from mgescompta.support.mise_a_jour import verifier_mise_a_jour
 from mgescompta.ui.classification_page import ClassificationPage
 from mgescompta.ui.departement_dialog import DepartementDialog
 from mgescompta.ui.ecritures_page import EcrituresPage
@@ -397,6 +399,9 @@ class MainWindow(QMainWindow):
         self.action_fermer_tout = QAction("Fermer &tout", self)
         self.action_fermer_tout.triggered.connect(self._fermer_tout)
 
+        self.action_verifier_maj = QAction("Vérifier les mises à jour…", self)
+        self.action_verifier_maj.triggered.connect(self._verifier_mise_a_jour)
+
         self.action_about = QAction("À propos de MgesCompta", self)
         self.action_about.triggered.connect(self._show_about)
 
@@ -459,6 +464,8 @@ class MainWindow(QMainWindow):
         menu_fenetre.addAction(self.action_fermer_tout)
 
         menu_aide = menu_bar.addMenu("&Aide")
+        menu_aide.addAction(self.action_verifier_maj)
+        menu_aide.addSeparator()
         menu_aide.addAction(self.action_about)
 
     def _build_toolbar(self) -> None:
@@ -516,7 +523,29 @@ class MainWindow(QMainWindow):
         QMessageBox.about(
             self,
             "À propos de MgesCompta",
-            "MgesCompta\nApplication de gestion de comptabilité (PySide6 + SQLite).",
+            f"MgesCompta v{__version__}\nApplication de gestion de comptabilité (PySide6 + SQLite).",
+        )
+
+    def _verifier_mise_a_jour(self) -> None:
+        resultat = verifier_mise_a_jour()
+        if resultat.erreur:
+            QMessageBox.warning(
+                self,
+                "Vérification impossible",
+                f"Impossible de vérifier les mises à jour (pas de connexion ?) :\n{resultat.erreur}",
+            )
+            return
+        if resultat.a_jour:
+            QMessageBox.information(
+                self, "À jour", f"Vous utilisez la dernière version (v{resultat.version_locale})."
+            )
+            return
+        QMessageBox.information(
+            self,
+            "Nouvelle version disponible",
+            f"Version installée : v{resultat.version_locale}\n"
+            f"Nouvelle version disponible : v{resultat.version_distante}\n\n"
+            f"Téléchargement : {resultat.url_release}",
         )
 
     # -- Barre d'état -----------------------------------------------------
