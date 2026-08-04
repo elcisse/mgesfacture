@@ -1,0 +1,21 @@
+[project]
+name = "mgescompta"
+version = "0.1.0"
+description = "Application de gestion de comptabilité en PySide6 + SQLite"
+requires-python = ">=3.11"
+dependencies = [
+    "PySide6>=6.11.1",
+]
+
+[project.scripts]
+mgescompta = "mgescompta.main:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+mgescompta = ["db/schema.sql", "db/data/*.json"]

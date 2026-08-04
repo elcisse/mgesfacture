@@ -1,0 +1,19 @@
+.venv/
+__pycache__/
+*.pyc
+*.sqlite3
+.pytest_cache/
+build/
+dist/
+*.egg-info/
+*.log
+backups/
+
+# Données réelles (tiers, localités) -- ne jamais publier sur un dépôt
+# public : noms/adresses/téléphones réels des prestataires/fournisseurs.
+# Le mécanisme de seed (support/database.py) gère très bien leur absence :
+# il saute simplement l'étape si le fichier n'existe pas.
+mgescompta/src/mgescompta/db/data/plan_tiers_defaut.json
+mgescompta/src/mgescompta/db/data/localites_defaut.json
+mgesfacture/src/mgesfacture/db/data/tiers_defaut.json
+mgesfacture/src/mgesfacture/db/data/localites_defaut.json

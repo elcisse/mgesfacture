@@ -1,0 +1,16 @@
+		CLE DE LA CODIFICATION			
+					
+Les 3 Premières Lettres:		Classification du Prestataire		ex: HOSP = Hôpital      PHA = Pharmacie         POS = Poste de Santé	
+Les 2 Premiers Chiffres:		Désignent la Région		ex: 01 = Dakar       05 = Kaolack          14 = Zuiguinchor     Ordre Alphabétique	
+La Lettre qui Suit:		Antenne Départementale dans la Région		ex: A Thiès  B = Mbour   C = Tivaouane                                Ordre Alphabétique	
+Les 2 Derniers Chiffres:		Numéro du Prestataire dans le Département		ex: La Pharmacie Mbathio de Saint-Louis est le 12 ième Prestataire	
+					
+Exemple:	PHA13C14	PHA    C'est une Pharmacie			
+		13         C'est la Région de Thiès			
+		C           C'est le Département de Tivaouane			
+		14         Numéro affecté à la Pharmacie Serigne Mbaye Sy Abdou			
+					
+N.B:	1. La Direction Nationale est considérée Comme un Département de la Région de Dakar				
+	2. Tout nouvel Prestataire suivra l'ordre dans le Département concerné				
+	3. Toute Nouvelle Région suivra la numérotation sans tenir compte de l'ordre alphabétique				
+	4. Tout Département qui change de Région change de code et ses prestataires avec				

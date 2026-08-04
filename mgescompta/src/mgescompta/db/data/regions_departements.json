@@ -1,0 +1,270 @@
+[
+  {
+    "code": "01",
+    "nom": "Dakar",
+    "departements": [
+      {
+        "code": "A",
+        "nom": "Dakar Direction"
+      },
+      {
+        "code": "B",
+        "nom": "Dakar"
+      },
+      {
+        "code": "C",
+        "nom": "Guédiawaye"
+      },
+      {
+        "code": "D",
+        "nom": "Rufisque"
+      },
+      {
+        "code": "E",
+        "nom": "Thiaroye"
+      }
+    ]
+  },
+  {
+    "code": "02",
+    "nom": "Diourbel",
+    "departements": [
+      {
+        "code": "A",
+        "nom": "Bambèye"
+      },
+      {
+        "code": "B",
+        "nom": "Diourbel"
+      },
+      {
+        "code": "C",
+        "nom": "Mbacké"
+      }
+    ]
+  },
+  {
+    "code": "03",
+    "nom": "Fatick",
+    "departements": [
+      {
+        "code": "A",
+        "nom": "Fatick"
+      },
+      {
+        "code": "B",
+        "nom": "Foundiougne"
+      },
+      {
+        "code": "C",
+        "nom": "Gossas"
+      }
+    ]
+  },
+  {
+    "code": "04",
+    "nom": "Kaffrine",
+    "departements": [
+      {
+        "code": "A",
+        "nom": "Birkilane"
+      },
+      {
+        "code": "B",
+        "nom": "Kaffrine"
+      },
+      {
+        "code": "C",
+        "nom": "Kounghel"
+      },
+      {
+        "code": "D",
+        "nom": "Malem Hoddar"
+      }
+    ]
+  },
+  {
+    "code": "05",
+    "nom": "Kaolack",
+    "departements": [
+      {
+        "code": "A",
+        "nom": "Guinguinéo"
+      },
+      {
+        "code": "B",
+        "nom": "Kaolack"
+      },
+      {
+        "code": "C",
+        "nom": "Nioro"
+      }
+    ]
+  },
+  {
+    "code": "06",
+    "nom": "Kédougou",
+    "departements": [
+      {
+        "code": "A",
+        "nom": "Kédougou"
+      },
+      {
+        "code": "B",
+        "nom": "Salémata"
+      },
+      {
+        "code": "C",
+        "nom": "Saraya"
+      }
+    ]
+  },
+  {
+    "code": "07",
+    "nom": "Kolda",
+    "departements": [
+      {
+        "code": "A",
+        "nom": "Kolda"
+      },
+      {
+        "code": "B",
+        "nom": "Médina Yoro Foula"
+      },
+      {
+        "code": "C",
+        "nom": "Vélingara"
+      }
+    ]
+  },
+  {
+    "code": "08",
+    "nom": "Louga",
+    "departements": [
+      {
+        "code": "A",
+        "nom": "Kébémer"
+      },
+      {
+        "code": "B",
+        "nom": "Linguère"
+      },
+      {
+        "code": "C",
+        "nom": "Louga"
+      }
+    ]
+  },
+  {
+    "code": "09",
+    "nom": "Matam",
+    "departements": [
+      {
+        "code": "A",
+        "nom": "Kanel"
+      },
+      {
+        "code": "B",
+        "nom": "Matam"
+      },
+      {
+        "code": "C",
+        "nom": "Ranérou"
+      }
+    ]
+  },
+  {
+    "code": "10",
+    "nom": "Saint-Louis",
+    "departements": [
+      {
+        "code": "A",
+        "nom": "Dagana"
+      },
+      {
+        "code": "B",
+        "nom": "Podor"
+      },
+      {
+        "code": "C",
+        "nom": "Saint-Louis"
+      }
+    ]
+  },
+  {
+    "code": "11",
+    "nom": "Sédhiou",
+    "departements": [
+      {
+        "code": "A",
+        "nom": "Bounkiling"
+      },
+      {
+        "code": "B",
+        "nom": "Goudomp"
+      },
+      {
+        "code": "C",
+        "nom": "Sédhiou"
+      }
+    ]
+  },
+  {
+    "code": "12",
+    "nom": "Tambacounda",
+    "departements": [
+      {
+        "code": "A",
+        "nom": "Bakel"
+      },
+      {
+        "code": "B",
+        "nom": "Goudiry"
+      },
+      {
+        "code": "C",
+        "nom": "Koumpentoum"
+      },
+      {
+        "code": "D",
+        "nom": "Tambacounda"
+      }
+    ]
+  },
+  {
+    "code": "13",
+    "nom": "Thiés",
+    "departements": [
+      {
+        "code": "A",
+        "nom": "Mbour"
+      },
+      {
+        "code": "B",
+        "nom": "Thiés"
+      },
+      {
+        "code": "C",
+        "nom": "Tivaouane"
+      }
+    ]
+  },
+  {
+    "code": "14",
+    "nom": "Ziguinchor",
+    "departements": [
+      {
+        "code": "A",
+        "nom": "Bignona"
+      },
+      {
+        "code": "B",
+        "nom": "Oussouye"
+      },
+      {
+        "code": "C",
+        "nom": "Ziguinchor"
+      }
+    ]
+  }
+]

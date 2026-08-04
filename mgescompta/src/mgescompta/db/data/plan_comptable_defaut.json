@@ -1,0 +1,254 @@
+[
+  {
+    "numero": "112000",
+    "intitule": "Réserves statutaires ou contractuelles",
+    "nature": "CAPITAUX",
+    "report_a_nouveau": "SOLDE_COMPTE",
+    "actif": 1
+  },
+  {
+    "numero": "121000",
+    "intitule": "Report à nouveau des excédents",
+    "nature": "CAPITAUX",
+    "report_a_nouveau": "SOLDE_COMPTE",
+    "actif": 1
+  },
+  {
+    "numero": "128000",
+    "intitule": "Résultat net en instance d'affectation",
+    "nature": "CAPITAUX",
+    "report_a_nouveau": "SOLDE_COMPTE",
+    "actif": 1
+  },
+  {
+    "numero": "129000",
+    "intitule": "Report à nouveau des déficits",
+    "nature": "CAPITAUX",
+    "report_a_nouveau": "SOLDE_COMPTE",
+    "actif": 1
+  },
+  {
+    "numero": "244100",
+    "intitule": "Matériel et mobilier de bureau",
+    "nature": "IMMOBILISATION",
+    "report_a_nouveau": "SOLDE_COMPTE",
+    "actif": 1
+  },
+  {
+    "numero": "244200",
+    "intitule": "Matériel informatique et bureautique",
+    "nature": "IMMOBILISATION",
+    "report_a_nouveau": "SOLDE_COMPTE",
+    "actif": 1
+  },
+  {
+    "numero": "284400",
+    "intitule": "Amortissements du matériel et du mobilier",
+    "nature": "IMMOBILISATION",
+    "report_a_nouveau": "SOLDE_COMPTE",
+    "actif": 1
+  },
+  {
+    "numero": "401100",
+    "intitule": "Fournisseurs",
+    "nature": "RESULTAT_BILAN",
+    "report_a_nouveau": "ECRITURES_NON_LETTREES",
+    "actif": 1
+  },
+  {
+    "numero": "411000",
+    "intitule": "Adhérents",
+    "nature": "RESULTAT_BILAN",
+    "report_a_nouveau": "ECRITURES_NON_LETTREES",
+    "actif": 1
+  },
+  {
+    "numero": "421100",
+    "intitule": "Personnel, avances",
+    "nature": "RESULTAT_BILAN",
+    "report_a_nouveau": "ECRITURES_NON_LETTREES",
+    "actif": 1
+  },
+  {
+    "numero": "422000",
+    "intitule": "Personnel, rémunérations dues",
+    "nature": "RESULTAT_BILAN",
+    "report_a_nouveau": "ECRITURES_NON_LETTREES",
+    "actif": 1
+  },
+  {
+    "numero": "431100",
+    "intitule": "Prestations familiales",
+    "nature": "RESULTAT_BILAN",
+    "report_a_nouveau": "ECRITURES_NON_LETTREES",
+    "actif": 1
+  },
+  {
+    "numero": "432100",
+    "intitule": "Caisse de retraite obligatoire",
+    "nature": "RESULTAT_BILAN",
+    "report_a_nouveau": "ECRITURES_NON_LETTREES",
+    "actif": 1
+  },
+  {
+    "numero": "442100",
+    "intitule": "Impôts et taxes d'Etat",
+    "nature": "RESULTAT_BILAN",
+    "report_a_nouveau": "ECRITURES_NON_LETTREES",
+    "actif": 1
+  },
+  {
+    "numero": "447200",
+    "intitule": "Impôts sur salaires",
+    "nature": "RESULTAT_BILAN",
+    "report_a_nouveau": "ECRITURES_NON_LETTREES",
+    "actif": 1
+  },
+  {
+    "numero": "521100",
+    "intitule": "Banques en monnaie nationale",
+    "nature": "CAISSE",
+    "report_a_nouveau": "SOLDE_COMPTE",
+    "actif": 1
+  },
+  {
+    "numero": "571000",
+    "intitule": "Caisse en monnaie nationale",
+    "nature": "CAISSE",
+    "report_a_nouveau": "SOLDE_COMPTE",
+    "actif": 1
+  },
+  {
+    "numero": "601100",
+    "intitule": "Prestation médicales",
+    "nature": "CHARGE",
+    "report_a_nouveau": "SOLDE_COMPTE",
+    "actif": 1
+  },
+  {
+    "numero": "601200",
+    "intitule": "Charges de fonctionnement",
+    "nature": "CHARGE",
+    "report_a_nouveau": "SOLDE_COMPTE",
+    "actif": 1
+  },
+  {
+    "numero": "605200",
+    "intitule": "Fournitures non stockables - Électricité",
+    "nature": "CHARGE",
+    "report_a_nouveau": "SOLDE_COMPTE",
+    "actif": 1
+  },
+  {
+    "numero": "605500",
+    "intitule": "Fournitures de bureau non stockables",
+    "nature": "CHARGE",
+    "report_a_nouveau": "SOLDE_COMPTE",
+    "actif": 1
+  },
+  {
+    "numero": "618100",
+    "intitule": "Voyages et déplacements",
+    "nature": "CHARGE",
+    "report_a_nouveau": "SOLDE_COMPTE",
+    "actif": 1
+  },
+  {
+    "numero": "622600",
+    "intitule": "Fermages et loyers du foncier",
+    "nature": "CHARGE",
+    "report_a_nouveau": "SOLDE_COMPTE",
+    "actif": 1
+  },
+  {
+    "numero": "624100",
+    "intitule": "Entretien et réparation des biens immobiliers",
+    "nature": "CHARGE",
+    "report_a_nouveau": "SOLDE_COMPTE",
+    "actif": 1
+  },
+  {
+    "numero": "624200",
+    "intitule": "Entretien et réparation des biens mobiliers",
+    "nature": "CHARGE",
+    "report_a_nouveau": "SOLDE_COMPTE",
+    "actif": 1
+  },
+  {
+    "numero": "628100",
+    "intitule": "Frais de téléphone",
+    "nature": "CHARGE",
+    "report_a_nouveau": "SOLDE_COMPTE",
+    "actif": 1
+  },
+  {
+    "numero": "641300",
+    "intitule": "Taxes sur appointements et salaires",
+    "nature": "CHARGE",
+    "report_a_nouveau": "SOLDE_COMPTE",
+    "actif": 1
+  },
+  {
+    "numero": "652000",
+    "intitule": "Subventions accordées par l'entité",
+    "nature": "CHARGE",
+    "report_a_nouveau": "SOLDE_COMPTE",
+    "actif": 1
+  },
+  {
+    "numero": "661100",
+    "intitule": "Appointements salaires et commissions",
+    "nature": "CHARGE",
+    "report_a_nouveau": "SOLDE_COMPTE",
+    "actif": 1
+  },
+  {
+    "numero": "664100",
+    "intitule": "Charges sociales sur rémunération du personnel national",
+    "nature": "CHARGE",
+    "report_a_nouveau": "SOLDE_COMPTE",
+    "actif": 1
+  },
+  {
+    "numero": "668500",
+    "intitule": "Assurances et organismes de santé",
+    "nature": "CHARGE",
+    "report_a_nouveau": "SOLDE_COMPTE",
+    "actif": 1
+  },
+  {
+    "numero": "701000",
+    "intitule": "Cotisations des adhérents",
+    "nature": "PRODUIT",
+    "report_a_nouveau": "SOLDE_COMPTE",
+    "actif": 1
+  },
+  {
+    "numero": "704100",
+    "intitule": "Dons",
+    "nature": "PRODUIT",
+    "report_a_nouveau": "SOLDE_COMPTE",
+    "actif": 1
+  },
+  {
+    "numero": "711000",
+    "intitule": "Subventions d'exploitation versées par l'État et les Collectivités publiques",
+    "nature": "PRODUIT",
+    "report_a_nouveau": "SOLDE_COMPTE",
+    "actif": 1
+  },
+  {
+    "numero": "713000",
+    "intitule": "Subventions d'exploitation versées par les organismes nationaux et internationaux",
+    "nature": "PRODUIT",
+    "report_a_nouveau": "SOLDE_COMPTE",
+    "actif": 1
+  },
+  {
+    "numero": "774700",
+    "intitule": "Revenus des dépôts à terme et opérations assimilées",
+    "nature": "PRODUIT",
+    "report_a_nouveau": "SOLDE_COMPTE",
+    "actif": 1
+  }
+]
