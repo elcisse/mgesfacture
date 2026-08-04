@@ -17,3 +17,4 @@ mgescompta/src/mgescompta/db/data/plan_tiers_defaut.json
 mgescompta/src/mgescompta/db/data/localites_defaut.json
 mgesfacture/src/mgesfacture/db/data/tiers_defaut.json
 mgesfacture/src/mgesfacture/db/data/localites_defaut.json
+mgescompta/tiers.xlsx
