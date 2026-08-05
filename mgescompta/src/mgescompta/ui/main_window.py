@@ -4,13 +4,17 @@ d'état dossier/exercice/utilisateur."""
 from __future__ import annotations
 
 import getpass
+import sys
+import urllib.error
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Callable
 
-from PySide6.QtCore import QSize, Qt
+from PySide6.QtCore import QProcess, QSize, Qt
 from PySide6.QtGui import QAction, QKeySequence
 from PySide6.QtSql import QSqlDatabase, QSqlQuery
 from PySide6.QtWidgets import (
+    QApplication,
     QDockWidget,
     QFrame,
     QLabel,
@@ -27,7 +31,7 @@ from PySide6.QtWidgets import (
 
 from mgescompta import __version__
 from mgescompta.db.database import DB_PATH
-from mgescompta.support.mise_a_jour import verifier_mise_a_jour
+from mgescompta.support.mise_a_jour import telecharger_et_installer, verifier_mise_a_jour
 from mgescompta.ui.classification_page import ClassificationPage
 from mgescompta.ui.departement_dialog import DepartementDialog
 from mgescompta.ui.ecritures_page import EcrituresPage
@@ -540,13 +544,49 @@ class MainWindow(QMainWindow):
                 self, "À jour", f"Vous utilisez la dernière version (v{resultat.version_locale})."
             )
             return
-        QMessageBox.information(
+
+        # Installation automatique possible seulement en exécutable figé
+        # (PyInstaller) avec un .exe joint à la release -- en mode
+        # développement il n'y a pas de fichier unique à remplacer.
+        if not resultat.url_asset or not getattr(sys, "frozen", False):
+            QMessageBox.information(
+                self,
+                "Nouvelle version disponible",
+                f"Version installée : v{resultat.version_locale}\n"
+                f"Nouvelle version disponible : v{resultat.version_distante}\n\n"
+                f"Téléchargement : {resultat.url_release}",
+            )
+            return
+
+        reponse = QMessageBox.question(
             self,
             "Nouvelle version disponible",
             f"Version installée : v{resultat.version_locale}\n"
             f"Nouvelle version disponible : v{resultat.version_distante}\n\n"
-            f"Téléchargement : {resultat.url_release}",
+            "Télécharger et installer maintenant ? L'application redémarrera.",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+            QMessageBox.StandardButton.No,
         )
+        if reponse != QMessageBox.StandardButton.Yes:
+            return
+
+        self.setCursor(Qt.CursorShape.WaitCursor)
+        try:
+            chemin_exe = Path(sys.executable)
+            telecharger_et_installer(resultat.url_asset, chemin_exe)
+        except (OSError, urllib.error.URLError) as erreur:
+            self.unsetCursor()
+            QMessageBox.critical(
+                self,
+                "Échec de la mise à jour",
+                f"Impossible d'installer la mise à jour automatiquement :\n{erreur}\n\n"
+                f"Vous pouvez la télécharger manuellement : {resultat.url_release}",
+            )
+            return
+        self.unsetCursor()
+
+        QProcess.startDetached(str(chemin_exe))
+        QApplication.quit()
 
     # -- Barre d'état -----------------------------------------------------
 
