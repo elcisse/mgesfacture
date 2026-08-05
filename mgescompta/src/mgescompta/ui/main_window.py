@@ -7,8 +7,8 @@ import getpass
 from dataclasses import dataclass
 from typing import Callable
 
-from PySide6.QtCore import QSize, Qt
-from PySide6.QtGui import QAction, QKeySequence
+from PySide6.QtCore import QSize, Qt, QUrl
+from PySide6.QtGui import QAction, QDesktopServices, QKeySequence
 from PySide6.QtSql import QSqlDatabase, QSqlQuery
 from PySide6.QtWidgets import (
     QDockWidget,
@@ -540,13 +540,18 @@ class MainWindow(QMainWindow):
                 self, "À jour", f"Vous utilisez la dernière version (v{resultat.version_locale})."
             )
             return
-        QMessageBox.information(
-            self,
-            "Nouvelle version disponible",
+        boite = QMessageBox(self)
+        boite.setIcon(QMessageBox.Icon.Information)
+        boite.setWindowTitle("Nouvelle version disponible")
+        boite.setText(
             f"Version installée : v{resultat.version_locale}\n"
-            f"Nouvelle version disponible : v{resultat.version_distante}\n\n"
-            f"Téléchargement : {resultat.url_release}",
+            f"Nouvelle version disponible : v{resultat.version_distante}"
         )
+        bouton_ouvrir = boite.addButton("Ouvrir la page de téléchargement…", QMessageBox.ButtonRole.ActionRole)
+        boite.addButton(QMessageBox.StandardButton.Close)
+        boite.exec()
+        if boite.clickedButton() is bouton_ouvrir and resultat.url_release:
+            QDesktopServices.openUrl(QUrl(resultat.url_release))
 
     # -- Barre d'état -----------------------------------------------------
 
