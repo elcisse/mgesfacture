@@ -6,8 +6,18 @@ from pathlib import Path
 
 from PySide6.QtCore import Qt
 from PySide6.QtSql import QSqlDatabase, QSqlQuery
-from PySide6.QtWidgets import QFileDialog, QHBoxLayout, QLabel, QLineEdit, QMenu, QMessageBox, QWidget
+from PySide6.QtWidgets import (
+    QFileDialog,
+    QHBoxLayout,
+    QLabel,
+    QLineEdit,
+    QMenu,
+    QMessageBox,
+    QPushButton,
+    QWidget,
+)
 
+from mgescompta.support.export_tiers import exporter_vers_csv
 from mgescompta.support.factures import factures_a_regler
 from mgescompta.support.tiers_releve import charger_releve, imprimer_releve_pdf
 from mgescompta.ui.facture_reglement_groupe_dialog import FactureReglementGroupeDialog
@@ -46,6 +56,10 @@ class TiersPage(ListablePage):
             parent=parent,
         )
 
+        bouton_exporter = QPushButton("Exporter vers mgesfacture (CSV)…", self)
+        bouton_exporter.clicked.connect(self._exporter_vers_mgesfacture)
+        self.entete_layout.addWidget(bouton_exporter)
+
         self.champ_recherche = QLineEdit(self)
         self.champ_recherche.setPlaceholderText("Rechercher par numéro ou intitulé…")
         self.champ_recherche.textChanged.connect(self._filtrer)
@@ -57,6 +71,23 @@ class TiersPage(ListablePage):
 
         self.liste.view.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self.liste.view.customContextMenuRequested.connect(self._menu_contextuel)
+
+    def _exporter_vers_mgesfacture(self) -> None:
+        chemin_str, _ = QFileDialog.getSaveFileName(
+            self, "Exporter les tiers vers mgesfacture", "tiers_export.csv", "Fichiers CSV (*.csv)"
+        )
+        if not chemin_str:
+            return
+
+        try:
+            resultat = exporter_vers_csv(self.db, Path(chemin_str))
+        except OSError as erreur:
+            QMessageBox.critical(self, "Erreur", f"Impossible d'écrire le fichier :\n{erreur}")
+            return
+
+        QMessageBox.information(
+            self, "Export terminé", f"{resultat.nb_tiers} tiers exporté(s) vers :\n{resultat.chemin}"
+        )
 
     def _filtrer(self, texte: str) -> None:
         texte = texte.strip()
