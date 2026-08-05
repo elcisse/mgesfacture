@@ -44,6 +44,7 @@ from mgescompta.ui.plan_comptable_edit_dialog import PlanComptableEditDialog
 from mgescompta.ui.region_dialog import RegionDialog
 from mgescompta.ui.selection_comptes_dialog import SelectionComptesDialog
 from mgescompta.ui.table_page import SqlTablePage
+from mgescompta.ui.tableau_bord_page import TableauBordPage
 from mgescompta.ui.tiers_dialog import TiersDialog
 from mgescompta.ui.tiers_page import TiersPage
 
@@ -88,6 +89,13 @@ def _listable_page(
 
 
 MODULE_DEFS: list[ModuleDef] = [
+    ModuleDef(
+        "tableau_bord",
+        "Tableau de bord",
+        "Tableau de bord",
+        QStyle.StandardPixmap.SP_DesktopIcon,
+        lambda db: TableauBordPage(db),
+    ),
     ModuleDef(
         "plan_comptable",
         "Plan comptable",
@@ -264,10 +272,10 @@ MODULE_DEFS: list[ModuleDef] = [
     ),
 ]
 
-CATEGORIES_ORDRE = ["Structure", "Tiers", "Saisie", "Référentiels"]
+CATEGORIES_ORDRE = ["Tableau de bord", "Structure", "Tiers", "Saisie", "Référentiels"]
 
 # Modules mis en avant dans la barre d'outils, comme les raccourcis de Sage.
-MODULES_BARRE_OUTILS = ["nouvelle_saisie", "plan_comptable", "tiers", "factures", "operations"]
+MODULES_BARRE_OUTILS = ["tableau_bord", "nouvelle_saisie", "plan_comptable", "tiers", "factures", "operations"]
 
 
 class MainWindow(QMainWindow):
@@ -290,7 +298,7 @@ class MainWindow(QMainWindow):
         self._build_navigation_dock()
         self._build_status_bar()
 
-        self.ouvrir_module("nouvelle_saisie")
+        self.ouvrir_module("tableau_bord")
 
     # -- Navigation -----------------------------------------------------
 
@@ -515,7 +523,7 @@ class MainWindow(QMainWindow):
         if sous_fenetre is None:
             return
         contenu = sous_fenetre.widget()
-        if isinstance(contenu, (SqlTablePage, ListablePage, NouvelleSaisiePage, ClassificationPage)):
+        if isinstance(contenu, (SqlTablePage, ListablePage, NouvelleSaisiePage, ClassificationPage, TableauBordPage)):
             contenu.refresh()
         self._refresh_status_bar()
 
